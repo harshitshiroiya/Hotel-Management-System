@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="assets/plugins/font/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="img/l2.png" type="img/icon" rel="icon">
+
+	
+</head>
+<body>
+	<div id="full">
+		<div  style="background-image: url('img/booking.jpg');background-size: 100% 710px;width: 100%; height: 710px">
+		<div id="header">
+			<div id="logo">
+				<h1 style="font-size:3vw"><font color="white">HILLTON INN</font></h1>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><a href="index.html"><span style="color: yellow"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a></li>
+					<li><a href="SignUp.html"><span style="color: yellow"><i class="fa fa-user-plus" aria-hidden="true"></i> SignUp</span></a></li>
+					<li><a href="Booking.html"><span style="color: yellow"><i class="fa fa-book" aria-hidden="true"></i> Booking</span></a></li>
+					<li><a href="gallery.html"><span style="color: yellow"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</span></a></li>
+					<li><a href="ContactUs.html"><span style="color: yellow"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</span></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		</center>	
+		<div id="banner">
+	    </div>
+	<center>
+		<div style="background:rgba(255,255,255,0.6); width: 80% ">
+			
+		  <form method="post" action="admin.php" onSubmit="return validateForm();">
+		  <table border="0" align="center">
+		<tbody>
+			<tr>
+				<td><label for="room">Room: </label></td>
+				<td><input id="room" maxlength="70" name="room" type="text" placeholder="Enter Number of rooms" /></td>
+			</tr>
+
+			<tr>
+				<td><label for="roomtype">Room Type: </label></td>
+				<td><input id="roomtype" maxlength="70" name="roomtype" type="text" placeholder="Enter room type" /></td>
+			</tr>
+
+
+			<tr>
+				<td><label for="adult">No. of adults: </label></td>
+				<td><input id="adult" maxlength="70" name="adult" type="text" placeholder="Enter Number of adults" /></td>
+			</tr>
+
+			<tr>
+				<td><label for="child">No. of Children: </label></td>
+				<td><input id="child" maxlength="70" name="child" type="text" placeholder="Enter Number of children" /></td>
+			</tr>
+
+			<tr>
+				<td><label for="arrival">Arrival Date: </label></td>
+				<td><input id="arrival" maxlength="70" name="arrival" type="date" /></td>
+			</tr>
+
+			<tr>
+				<td><label for="departure">Departure Date: </label></td>
+				<td><input id="departure" maxlength="70" name="departure" type="date"  /></td>
+			</tr>
+
+			<tr>
+				<td><input style="width: 120px; height: 30px" name="Submit" type="Submit" value="Submit" /></td>
+			</tr>
+
+		</tbody>
+		  </table>
+		
+			</form>
+			</div>
+	</center>  
+
+	
+</body>
+</html>

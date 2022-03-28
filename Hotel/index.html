@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+    #result{
+      position: absolute;
+      top: 45px;
+      width: 50px;
+      max-width: 80px;
+      cursor: pointer;
+      overflow-y: auto;
+      max-height: 200px;
+      box-sizing: border-box;
+    }
+
+    #result :hover{
+      background-color: #F1F1F1;
+    }
+
+  </style>
+
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="assets/plugins/font/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<link href="img/l2.png" type="img/icon" rel="icon">
+	<script type="text/javascript">
+		(function() {
+	
+	function Slideshow( element ) {
+		this.el = document.querySelector( element );
+		this.init();
+	}
+	
+	Slideshow.prototype = {
+		init: function() {
+			this.wrapper = this.el.querySelector( ".slider-wrapper" );
+			this.slides = this.el.querySelectorAll( ".slide" );
+			this.previous = this.el.querySelector( ".slider-previous" );
+			this.next = this.el.querySelector( ".slider-next" );
+			this.index = 0;
+			this.total = this.slides.length;
+			this.timer = null;
+			
+			this.action();
+			this.stopStart();	
+		},
+		_slideTo: function( slide ) {
+			var currentSlide = this.slides[slide];
+			currentSlide.style.opacity = 1;
+			
+			for( var i = 0; i < this.slides.length; i++ ) {
+				var slide = this.slides[i];
+				if( slide !== currentSlide ) {
+					slide.style.opacity = 0;
+				}
+			}
+		},
+		action: function() {
+			var self = this;
+			self.timer = setInterval(function() {
+				self.index++;
+				if( self.index == self.slides.length ) {
+					self.index = 0;
+				}
+				self._slideTo( self.index );
+				
+			}, 3000);
+		},
+		stopStart: function() {
+			var self = this;
+			self.el.addEventListener( "mouseover", function() {
+				clearInterval( self.timer );
+				self.timer = null;
+				
+			}, false);
+			self.el.addEventListener( "mouseout", function() {
+				self.action();
+				
+			}, false);
+		}
+		
+		
+	};
+	
+	document.addEventListener( "DOMContentLoaded", function() {
+		
+		var slider = new Slideshow( "#main-slider" );
+		
+	});
+	
+	
+})();
+	</script>
+
+</head>
+<body>
+	<div id="full">
+
+	
+		
+		<div id="header">
+			<div id="logo">
+				<h1 style="font-size:3vw"><font color="white">HILLTON INN</font></h1>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><a href="index.html"><span style="color: yellow"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a></li>
+					<li><a href="SignUp.html"><span style="color: yellow"><i class="fa fa-user-plus" aria-hidden="true"></i> SignUp</span></a></li>
+					<li><a href="Booking.html"><span style="color: yellow"><i class="fa fa-book" aria-hidden="true"></i> Booking</span></a></li>
+					<li><a href="gallery.html"><span style="color: yellow"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</span></a></li>
+					<li><a href="ContactUs.html"><span style="color: yellow"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</span></a></li><br>
+					<!--<br><input class="form-control" type="text" id="search" placeholder="Search" aria-label="Search">-->
+
+					<form class="form-inline">
+      					<input class="form-control" type="text" id="search" placeholder="Search" aria-label="Search">
+      					<input type="button" id="btn2" value="Search" type="submit" style="border: none; background-color: blue; color: white;">
+
+      					<ul align="center" class="list-group" id="result"></ul>
+    				</form>
+      				
+				</ul>
+			</div>
+		</div>
+		</div>
+		<div id="banner1">
+		 <div class="slider" id="main-slider">
+		<div class="slider-wrapper">
+		<img src="img/b1.jpg" alt="First" class="slide" />
+		<img src="images/slider2.jpg" alt="Second" class="slide" />
+		<img src="images/slider3.jpg" alt="Third" class="slide" />
+		<img src="images/slider1.jpg" alt="Fourth" class="slide" />
+	</div>
+</div>	
+</div>
+
+			
+		
+	    </div>
+<div id="banner">
+	</div>
+	<div id="f1">
+		<center><table>
+			<tr>
+				<th width="20%" height="50px"><font color="yellow">Destination</font></th>
+				<th width="20%" height="50px"><font color="yellow">Check in</font></th>
+				<th width="20%" height="50px"><font color="yellow">Check out</font></th>
+				<th width="20%" height="50px"><font color="yellow">Room</th>
+				<td rowspan="10"><li><a href="Booking.html"><font color="yellow">Check </a></li>
+			</tr>
+			<tr>
+				<td width="20%" height="50px"><center><input type="text" name="d1" placeholder="Enter Destination"></center></td>
+				<td width="20%" height="50px"><center><input type="date" name="ci"></center></td>
+				<td width="20%" height="50px"><center><input type="date" name="co"></center></td>
+				<td width="20%" height="50px"><center>
+					<select>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select></center>
+				</td>
+			</tr>
+		</table></center>
+	</div>
+	<div id="welcome">
+		<div id="welcome1">
+			<h2 align="center"><font color="black"> HILLTON Group of Hotels</font></h2>
+		</div>
+		<center><font size="3" color="black">
+			<p style="border:2px solid black;"><br>Quintessentially Indian in its fabric, Taj Hotels Palaces Resorts Safaris is recognized the world over for delivering a unique flavour of hospitality that offers<br>
+			world-class refinement while remaining deeply rooted in its local heritage. With over 100 hotels in 62 locations, Taj offers guests the refined luxury of <br>
+			heritage, the effortlessly efficient service and amenities and a local experience with the assurance of quality.<br><br>
+		</font>
+	</p>
+		<h2 style="color: black;">Our Brands</h2>
+	</div>
+	<div id="g1">
+		<div id="one"><img src="img/g1.jpg" width="100%">
+			<center><h2>HILLTON</h2></center>
+		</div>
+		<div id="two"><img src="img/g2.jpg" width="100%">
+			<center><h2>HILLTON MAHAL</h2></center>
+		</div>
+		<div id="three"><img src="img/g3.jpg" width="100%">
+			<center><h2>VIVANTA</h2></center>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
+
+<script >
+    
+    $(document).ready(function(){
+
+      $.ajaxSetup({cache: false});
+      $('#search').keyup(function(){
+        $('#result').html('');
+        $('#state').val('');
+        var searchField = $('#search').val();
+        var expression = new RegExp(searchField, "i");
+
+        $.getJSON('place.json',function(place){
+
+          $.each(place,function(key, value){
+            if(value.name.search(expression) != -1 )
+            {
+              $('#result').append('<li class="list-group-item link-class">'+value.name+'</li>')
+              
+            }
+          });
+        });
+      });
+
+      $('#result').on('click','li',function(){
+
+        var click_text = $(this).text().split('|');
+
+        $('#search').val($.trim(click_text[0]));
+        $("#result").html('');
+      });
+
+      $('#btn2').on('click',function(){
+
+        window.location.replace("Booking.html");
+      });
+    });
+</script>

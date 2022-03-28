@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="assets/plugins/font/web-fonts-with-css/css/fontawesome-all.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="img/l2.png" type="img/icon" rel="icon">
+
+<script type="text/javascript">
+		function validateForm() {
+
+			var p = signup.password.value;
+			var c = signup.confpsw.value;
+
+			if(p!=c)
+			{
+				alert('Password should be same')
+				signup.confpsw.focus();
+			}
+
+		if (isEmpty(document.getElementById('firstname').value.trim())) {
+			alert('First name is required!');
+			return false;
+		}
+		if (isEmpty(document.getElementById('lastname').value.trim())) {
+			alert('Last name is required!');
+			return false;
+		}
+		if (isEmpty(document.getElementById('contactno').value.trim())) {
+			alert('Phone is required!');
+			return false;
+			}
+		if (isEmpty(document.getElementById('username').value.trim())) {
+			alert('Username is required!');
+			return false;
+		}
+		if (!validateEmail(document.getElementById('email').value.trim())) {
+			alert('Email must be a valid email address!');
+			return false;
+		}
+		if (isEmpty(document.getElementById('username').value.trim())) {
+			alert('Username is required!');
+			return false;
+		}
+		if (isEmpty(document.getElementById('password').value.trim())) {
+			alert('Password is required!');
+			return false;
+		}
+		if (isEmpty(document.getElementById('confpsw').value.trim())) {
+			alert('Confirm Password is required!');
+			return false;
+		}		
+
+		
+		return true;
+	}
+	function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+	function validateEmail(email) {
+		var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+		return isEmpty(email) || re.test(email);
+	}
+</script>
+
+</head>
+
+<body>
+<div id="full">
+	<div  style="background-image: url('img/bed.jpg');background-size: 100% 710px; width: 100%; height: 710px">
+	<div id="header">
+			<div id="logo">
+				<h1 style="font-size:3vw"><font color="white">HILLTON INN</font></h1>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><a href="index.html"><span style="color: yellow"><i class="fa fa-home" aria-hidden="true"></i> Home</span></a></li>
+					<li><a href="SignUp.html"><span style="color: yellow"><i class="fa fa-user-plus" aria-hidden="true"></i> SignUp</span></a></li>
+					<li><a href="Booking.html"><span style="color: yellow"><i class="fa fa-book" aria-hidden="true"></i> Booking</span></a></li>
+					<li><a href="gallery.html"><span style="color: yellow"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</span></a></li>
+					<li><a href="ContactUs.html"><span style="color: yellow"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</span></a></li>
+				</ul>
+			</div>
+		</div>
+		
+		</center>	
+		<div id="banner">
+	    </div>
+	<center>
+		<div style="background:rgba(255,255,255,0.6); width: 80% ">
+			<h2 ALIGN="CENTER">Create a new User</h2>
+			  <form name="signup" method="POST" action="insert7.php" onSubmit="return validateForm();">
+		  <table border="0" align="center">
+		<tbody>
+			<tr>
+	<td><label for="firstname">First Name<span style="color: red">*</span>: </label></td>
+	<td><input id="firstname" maxlength="50" name="firstname" type="text" placeholder="Enter First Name" /></td>
+	</tr>
+
+	<tr>
+	<td><label for="lastname">Last Name<span style="color: red">*</span>: </label></td>
+	<td><input id="lastname" maxlength="50" name="lastname" type="text" placeholder="Enter Last Name" /></td>
+	</tr>
+
+	<tr>
+	<td><label for="gender">Gender: </label></td>
+	<td><input type="radio" name="gender" value="M" checked>Male
+	    	<input type="radio" name="gender" value="F" >Female<br></td>
+	</tr>
+
+	<tr>
+	<td><label for="contactno">Contact Number<span style="color: red">*</span>: </label></td>
+	<td><input id="contactno" maxlength="10" name="contactno" type="text" placeholder="Enter Contact Number" /></td>
+	</tr>
+
+	<tr>
+	<td><label for="email">Email ID<span style="color: red">*</span>: </label></td>
+	<td><input id="email" maxlength="50" name="email" type="text" placeholder="Enter Email" /></td>
+	</tr>
+
+	<tr>
+	<td><label for="username">UserName<span style="color: red">*</span>: </label></td>
+	<td><input id="username" maxlength="50" name="username" type="text" placeholder="Enter username" /></td>
+	</tr>
+
+	<tr>
+	<td><label for="password">Password<span style="color: red">*</span>: </label></td>
+	<td><input id="password" maxlength="50" name="password" type="Password" placeholder="Enter Password" /></td>
+	</tr>
+
+	<tr>
+	<td><label for="confpsw">Confirm Password<span style="color: red">*</span>: </label></td>
+	<td><input id="confpsw" maxlength="50" name="confpsw" type="Password" placeholder="Confirm Password" /></td>
+	</tr>
+
+	<tr>
+	<td><input style="width: 120px; height: 30px" name="Submit" type="Submit" value="Submit" /></td>
+	</tr>
+</tbody>
+</table>
+</form>
+</div>
+</center>
+</body>
+</html>
